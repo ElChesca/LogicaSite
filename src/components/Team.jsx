@@ -29,11 +29,11 @@ const Team = () => {
             <div className="container">
                 <div style={{ textAlign: 'center', marginBottom: '6rem' }}>
                     <div className="modern-badge">TEAM_MEMBERS</div>
-                    <h2 style={{ fontSize: '4rem', letterSpacing: '-0.04em', marginTop: '1rem' }}>Personas que hacen.</h2>
+                    <h2 style={{ fontSize: 'clamp(2.2rem, 7vw, 4rem)', letterSpacing: '-0.04em', marginTop: '1rem' }}>Personas que hacen.</h2>
                 </div>
 
                 <div style={{ marginBottom: '8rem' }}>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '4rem' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(320px, 100%), 1fr))', gap: '4rem' }}>
                         {partners.map((p, i) => (
                             <div key={i} className="partner-card">
                                 <div className="partner-image-container">

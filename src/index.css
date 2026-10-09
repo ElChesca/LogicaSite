@@ -176,6 +176,32 @@ button {
   gap: 2rem;
 }
 
+/* Hero responsive grid: single column below desktop */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+  width: 100%;
+}
+
+@media (min-width: 968px) {
+  .hero-grid {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+    gap: 4rem;
+  }
+}
+
+.roadmap-orbit {
+  height: 340px;
+}
+
+@media (min-width: 968px) {
+  .roadmap-orbit {
+    height: 600px;
+  }
+}
+
 /* Tech Background Dot Pattern */
 .tech-dot-bg {
   background-image: radial-gradient(#e5e7eb 1px, transparent 1px);

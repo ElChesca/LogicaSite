@@ -26,12 +26,12 @@ const Services = () => {
             <div className="container">
                 <div style={{ marginBottom: '4rem' }}>
                     <div className="modern-badge">FOCO OPERATIVO</div>
-                    <h2 style={{ fontSize: '3rem', marginBottom: '1rem', marginTop: '1rem' }}>Soluciones que funcionan.</h2>
+                    <h2 style={{ fontSize: 'clamp(2.2rem, 7vw, 3rem)', marginBottom: '1rem', marginTop: '1rem' }}>Soluciones que funcionan.</h2>
                     <p style={{ color: 'var(--text-muted)', maxWidth: '500px' }}>
                         Detectamos fricciones y desarrollamos soluciones para procesos, ventas y gestión interna.
                     </p>
                 </div>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))', gap: '2rem' }}>
                     {services.map((s, i) => (
                         <motion.div
                             key={i}

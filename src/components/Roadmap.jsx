@@ -13,10 +13,10 @@ const Roadmap = () => {
     return (
         <section id="proyectos" className="section" style={{ background: '#fcfcfc', overflow: 'hidden' }}>
             <div className="container-wide">
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem', alignItems: 'center' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))', gap: '4rem', alignItems: 'center' }}>
 
                     <div
-                        style={{ position: 'relative', height: '600px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                        className="roadmap-orbit" style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}
                         aria-hidden="true"
                     >
                         <div className="center-system">
@@ -55,7 +55,7 @@ const Roadmap = () => {
                     <div>
                         <div style={{ marginBottom: '3rem' }}>
                             <div className="modern-badge">METODOLOGÍA</div>
-                            <h2 style={{ fontSize: '3.5rem', letterSpacing: '-0.04em', lineHeight: '1', marginTop: '1rem' }}>Evolución continua.</h2>
+                            <h2 style={{ fontSize: 'clamp(2.2rem, 7vw, 3.5rem)', letterSpacing: '-0.04em', lineHeight: '1', marginTop: '1rem' }}>Evolución continua.</h2>
                         </div>
                         <div className="flex flex-col gap-4">
                             {steps.map((step, i) => (

@@ -24,7 +24,7 @@ const Friction = () => {
                 <div className="friction-grid" style={{ alignItems: 'center' }}>
                     <div>
                         <div className="modern-badge" style={{ marginBottom: '1.5rem' }}>DIAGNÓSTICO</div>
-                        <h2 style={{ fontSize: 'clamp(2.5rem, 6vw, 5.5rem)', lineHeight: '0.9', marginBottom: '4rem', letterSpacing: '-0.04em' }}>
+                        <h2 style={{ fontSize: 'clamp(2.2rem, 7vw, 5.5rem)', lineHeight: '0.9', marginBottom: '4rem', letterSpacing: '-0.04em' }}>
                             <span style={{ color: '#eee' }}>Muchas empresas</span> <br />
                             <span style={{ color: '#ccc' }}>tienen potencial</span> <br />
                             <span style={{ color: '#000' }}>para crecer.</span>
@@ -84,7 +84,7 @@ const Friction = () => {
                         </div>
                     </div>
 
-                    <div className="gears-container hidden md:flex" style={{ position: 'relative', height: '600px', display: 'flex', alignItems: 'center', justifyContent: 'center' }} aria-hidden="true">
+                    <div className="gears-container hidden md:flex" style={{ position: 'relative', height: '600px', alignItems: 'center', justifyContent: 'center' }} aria-hidden="true">
                         <div style={{ position: 'relative', width: '100%', height: '100%' }}>
 
                             {gearPositions.map((g, i) => (
