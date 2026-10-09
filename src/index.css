@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap');
 
 :root {
-  --bg-color: #050505;
-  --text-color: #ffffff;
-  --text-muted: #a0a0a0;
-  --accent-color: #3b82f6;
-  --accent-soft: rgba(59, 130, 246, 0.1);
-  --card-bg: rgba(255, 255, 255, 0.03);
-  --border-color: rgba(255, 255, 255, 0.1);
+  --bg-color: #ffffff;
+  --text-color: #111111;
+  --text-muted: #6b7280;
+  --accent-color: #000000;
+  --accent-soft: #f3f4f6;
+  --card-bg: #f9fafb;
+  --border-color: #e5e7eb;
   --font-primary: 'Inter', sans-serif;
   --font-heading: 'Outfit', sans-serif;
-  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 * {
@@ -32,7 +32,10 @@ body {
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--font-heading);
   font-weight: 600;
   letter-spacing: -0.02em;
@@ -57,6 +60,12 @@ button {
 
 .container {
   max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.container-wide {
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 2rem;
 }
@@ -101,17 +110,397 @@ button {
   transform: scale(1.05);
 }
 
-.text-gradient {
-  background: linear-gradient(135deg, #fff 0%, #a0a0a0 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+/* Utilities */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.hidden {
+  display: none;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.gap-6 {
+  gap: 1.5rem;
+}
+
+.gap-8 {
+  gap: 2rem;
+}
+
+.gap-12 {
+  gap: 3rem;
+}
+
+@media (min-width: 768px) {
+  .md\:flex {
+    display: flex;
+  }
+
+  .md\:hidden {
+    display: none;
+  }
+}
+
+.mobile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: white;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* Tech Background Dot Pattern */
+.tech-dot-bg {
+  background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.nav-link {
+  position: relative;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #666;
+  font-weight: 500;
+  padding: 0.5rem 0;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #000;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link:hover {
+  color: #000;
+}
+
+.modern-badge {
+  background: #000;
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.float-anim {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin 8s linear infinite;
+}
+
+.animate-spin-reverse-slow {
+  animation: spin-reverse 12s linear infinite;
+}
+
+.friction-card {
+  border-left: 1px solid #eee;
+  padding-left: 2rem;
+  transition: all 0.5s ease;
+}
+
+.friction-card:hover {
+  border-left: 4px solid #000;
+  padding-left: 2.5rem;
+}
+
+.friction-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.team-image-container {
+  border-radius: 20px;
+  overflow: hidden;
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  margin-bottom: 2rem;
+  transition: transform 0.4s ease;
+}
+
+.team-image-container:hover {
+  transform: scale(1.02);
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.1);
+  }
+
+  70% {
+    box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+.orbit-line {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1px dashed #eee;
+  pointer-events: none;
+}
+
+.planet-point {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #000;
+  border-radius: 50%;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.center-system {
+  width: 100px;
+  height: 100px;
+  background: #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.6rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  animation: pulse-glow 2s infinite;
+  z-index: 10;
+  text-align: center;
+  padding: 1rem;
+}
+
+.system-card {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid transparent;
+}
+
+.system-card.active {
+  background: #fff;
+  border-color: #eee;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  transform: translateX(10px);
+}
+
+.team-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: grayscale(100%);
+  transition: filter 0.5s ease;
+}
+
+.team-image-container:hover .team-img {
+  filter: grayscale(0%);
+}
+
+@media (max-width: 968px) {
+  .friction-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .gears-container {
+    height: 300px !important;
+  }
 }
 
 @media (max-width: 768px) {
   .section {
     padding: 60px 0;
   }
-  
-  h1 { font-size: 2.5rem; }
-  h2 { font-size: 2rem; }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+}
+
+/* Premium Partner Cards styling */
+.partner-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.partner-image-container {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #0d0d0d; /* Premium deep base */
+  border: 1px solid var(--border-color);
+  margin-bottom: 1.8rem;
+  aspect-ratio: 4 / 5;
+  width: 100%;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.6s ease;
+}
+
+.partner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%) contrast(1.1) brightness(0.95);
+  transition: filter 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.partner-img-fede {
+  object-position: center 60%;
+  transform: scale(1.0);
+}
+
+.partner-img-martin {
+  object-position: center 0%;
+  transform: scale(1.6) translateY(-21%);
+  transform-origin: center top;
+}
+
+/* Grayscale/dark overlay that unifies the backgrounds */
+.partner-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.45) 100%);
+  mix-blend-mode: multiply;
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), background 0.6s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Subtle dot grid matrix to reinforce the digital/operations theme */
+.partner-tech-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+  background-size: 16px 16px;
+  opacity: 0.65;
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Hover dynamic states */
+.partner-image-container:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  border-color: #000;
+}
+
+.partner-image-container:hover .partner-img-fede {
+  filter: grayscale(30%) contrast(1.05) brightness(1.0);
+  transform: scale(1.03);
+}
+
+.partner-image-container:hover .partner-img-martin {
+  filter: grayscale(30%) contrast(1.05) brightness(1.0);
+  transform: scale(1.64) translateY(-21%);
+}
+
+.partner-image-container:hover .partner-mask {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.25) 100%);
+}
+
+.partner-image-container:hover .partner-tech-pattern {
+  opacity: 0.25;
 }
