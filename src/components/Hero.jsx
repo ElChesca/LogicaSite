@@ -53,20 +53,20 @@ const Hero = () => {
                 </motion.div>
 
                 {/* Mobile gears (visible only below md) */}
-                <div className="md:hidden" style={{ position: 'relative', height: '220px', marginTop: '1rem', overflow: 'hidden' }} aria-hidden="true">
+                <div className="md:hidden" style={{ position: 'relative', height: '240px', marginTop: '1rem', overflow: 'hidden' }} aria-hidden="true">
                     <motion.div
-                        style={{ position: 'absolute', top: '0', right: '0', color: '#f5f5f5' }}
+                        style={{ position: 'absolute', top: '-10px', left: '22%', color: '#c4c4c4' }}
                         className="animate-spin-slow"
                     >
-                        <Settings size={190} strokeWidth={0.1} />
+                        <Settings size={170} strokeWidth={0.6} />
                     </motion.div>
                     <motion.div
-                        style={{ position: 'absolute', bottom: '5%', left: '5%', color: '#000' }}
+                        style={{ position: 'absolute', bottom: '8%', left: '4%', color: '#000' }}
                         className="animate-spin-reverse-slow"
                     >
-                        <Settings size={110} strokeWidth={0.4} />
+                        <Settings size={125} strokeWidth={0.5} />
                     </motion.div>
-                    <div style={{ position: 'absolute', top: '50%', right: '12%', transform: 'translateY(-50%)', zIndex: 1, textAlign: 'right' }}>
+                    <div style={{ position: 'absolute', top: '50%', right: '4%', transform: 'translateY(-50%)', zIndex: 1, textAlign: 'right' }}>
                         <div style={{ fontSize: '0.6rem', fontWeight: '800', letterSpacing: '0.4em', textTransform: 'uppercase', marginBottom: '0.6rem', color: '#666' }}>EL MÉTODO</div>
                         <div style={{ fontSize: '1.9rem', fontWeight: '900', lineHeight: '1', letterSpacing: '-0.05em', color: '#000' }}>
                             SOMOS <br /> LÓGICA<span style={{ color: '#ccc' }}>.</span>
