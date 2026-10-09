@@ -2,14 +2,14 @@ import React from 'react';
 
 const Footer = () => (
     <footer style={{ padding: '60px 0', borderTop: '1px solid var(--border-color)' }}>
-        <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '3rem' }}>
+        <div className="container footer-inner">
             {/* Brand & Copyright */}
-            <div style={{ flex: '1 1 250px' }}>
+            <div className="footer-brand">
                 <div className="font-heading font-bold text-xl tracking-tighter mb-4">LÓGICA<span style={{ color: 'var(--accent-color)' }}>.</span></div>
                 <p style={{ color: 'var(--text-muted)', fontSize: '0.875rem' }}>© {new Date().getFullYear()} Somos Lógica. <br />Todos los derechos reservados.</p>
             </div>
 
-            <div style={{ display: 'flex', gap: '4rem', flexWrap: 'wrap', flex: '2 1 auto', justifyContent: 'flex-end' }}>
+            <div className="footer-cols">
                 {/* Social Column */}
                 <div className="flex flex-col gap-2">
                     <span style={{ fontWeight: 'bold', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>Social</span>

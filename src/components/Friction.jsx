@@ -34,6 +34,7 @@ const Friction = () => {
                                 <motion.div
                                     key={i}
                                     onMouseEnter={() => { setActiveFriction(i); if (!isFixed) setIsFixed(false); }}
+                                    onClick={() => { setActiveFriction(i); if (!isFixed) setIsFixed(false); }}
                                     tabIndex={0}
                                     role="button"
                                     aria-pressed={activeFriction === i}

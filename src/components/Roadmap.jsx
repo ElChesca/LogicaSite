@@ -63,6 +63,7 @@ const Roadmap = () => {
                                     key={i}
                                     className={`system-card ${activeStep === i ? 'active' : ''}`}
                                     onMouseEnter={() => setActiveStep(i)}
+                                    onClick={() => setActiveStep(i)}
                                     onFocus={() => setActiveStep(i)}
                                     tabIndex={0}
                                     role="button"
