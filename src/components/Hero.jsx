@@ -14,7 +14,7 @@ const Hero = () => {
     }, [words.length]);
 
     return (
-        <header id="inicio" className="section tech-dot-bg" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', paddingTop: '150px', position: 'relative' }}>
+        <header id="inicio" className="section tech-dot-bg hero-header">
             <div className="container-wide hero-grid" style={{ position: 'relative' }}>
 
 
